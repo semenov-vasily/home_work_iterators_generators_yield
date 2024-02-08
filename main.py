@@ -37,13 +37,10 @@ class FlatIterator:
 def test_1(lists):
     # Исходный список списков
     list_of_lists_1 = lists
-
     for flat_iterator_item, check_item in zip(
             FlatIterator(list_of_lists_1),
-            ['a', 'b', 'c', 'd', 'e', 'f', 'h', False, 1, 2, None]
-    ):
+            ['a', 'b', 'c', 'd', 'e', 'f', 'h', False, 1, 2, None]):
         assert flat_iterator_item == check_item
-
     assert list(FlatIterator(list_of_lists_1)) == ['a', 'b', 'c', 'd', 'e', 'f', 'h', False, 1, 2, None]
 
 
@@ -61,16 +58,11 @@ def flat_generator(list_of_lists):
 def test_2(lists):
     # Исходный список списков
     list_of_lists_1 = lists
-
     for flat_iterator_item, check_item in zip(
             flat_generator(list_of_lists_1),
-            ['a', 'b', 'c', 'd', 'e', 'f', 'h', False, 1, 2, None]
-    ):
-
+            ['a', 'b', 'c', 'd', 'e', 'f', 'h', False, 1, 2, None]):
         assert flat_iterator_item == check_item
-
     assert list(flat_generator(list_of_lists_1)) == ['a', 'b', 'c', 'd', 'e', 'f', 'h', False, 1, 2, None]
-
     assert isinstance(flat_generator(list_of_lists_1), types.GeneratorType)
 
 
